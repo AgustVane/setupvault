@@ -1,0 +1,25 @@
+{
+  "snapshot_version": 1,
+  "tool_version": "1.0.0",
+  "created_at": "2026-06-24T14:30:00Z",
+  "system": {
+    "distribution": {
+      "id": "arch",
+      "name": "Arch Linux",
+      "version": "rolling"
+    },
+    "kernel": {
+      "release": "6.6.32-arch1-1",
+      "version": "#1 SMP PREEMPT_DYNAMIC"
+    },
+    "architecture": "x86_64",
+    "hostname": "minimal-rig"
+  },
+  "packages": {
+    "count": {
+      "official": 500,
+      "total": 500
+    },
+    "official": []
+  }
+}

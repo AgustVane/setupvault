@@ -1,0 +1,94 @@
+{
+  "snapshot_version": 1,
+  "tool_version": "1.0.0",
+  "created_at": "2026-06-24T14:30:00Z",
+  "profile": "full",
+  "system": {
+    "distribution": {
+      "id": "arch",
+      "name": "Arch Linux",
+      "version": "rolling",
+      "version_id": "20260601",
+      "id_like": ["arch"]
+    },
+    "kernel": {
+      "release": "6.6.32-arch1-1",
+      "version": "#1 SMP PREEMPT_DYNAMIC Thu, 01 Jun 2026 00:00:00 +0000"
+    },
+    "architecture": "x86_64",
+    "hostname": "test-rig",
+    "uptime_seconds": 86400,
+    "os": "Linux"
+  },
+  "environment": {
+    "desktop_environment": {
+      "name": "Hyprland",
+      "version": "0.44.1"
+    },
+    "window_manager": {
+      "name": "Hyprland",
+      "version": "0.44.1"
+    },
+    "display_server": "wayland",
+    "session_type": "wayland"
+  },
+  "shell": {
+    "current": {
+      "name": "zsh",
+      "version": "5.9",
+      "path": "/usr/bin/zsh"
+    },
+    "available": [
+      {"name": "bash", "version": "5.2.26", "path": "/usr/bin/bash"},
+      {"name": "zsh", "version": "5.9", "path": "/usr/bin/zsh"}
+    ],
+    "config_files": [
+      {"path": ".zshrc", "hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855", "size": 2048}
+    ]
+  },
+  "packages": {
+    "count": {
+      "official": 1500,
+      "aur": 50,
+      "third_party": 0,
+      "flatpak": 0,
+      "snap": 0,
+      "total": 1550
+    },
+    "official": [
+      {"name": "linux", "version": "6.6.32.arch1-1", "repository": "core", "size": 102400000, "description": "The Linux kernel and modules"},
+      {"name": "firefox", "version": "127.0-1", "repository": "extra", "size": 250000000, "description": "Fast, Private & Safe Web Browser"}
+    ],
+    "aur": [
+      {"name": "yay", "version": "12.3.5-1", "description": "Yet another yogurt. Pacman wrapper and AUR helper"}
+    ]
+  },
+  "themes": {
+    "gtk": {
+      "theme": "Catppuccin-Mocha",
+      "icon_theme": "Papirus-Dark",
+      "cursor_theme": "Nordzy-cursors",
+      "font_name": "Cantarell 11",
+      "color_scheme": "prefer-dark"
+    },
+    "qt": {
+      "theme": "Breeze",
+      "icon_theme": "breeze-dark",
+      "font_name": "Noto Sans 10"
+    }
+  },
+  "fonts": {
+    "system_fonts": [
+      {"family": "Noto Sans", "style": "Regular", "path": "/usr/share/fonts/noto/NotoSans-Regular.ttf"},
+      {"family": "Noto Sans Mono", "style": "Regular", "path": "/usr/share/fonts/noto/NotoSansMono-Regular.ttf"}
+    ],
+    "config": {
+      "hinting": "full",
+      "antialiasing": true
+    }
+  },
+  "dotfiles": [
+    {"path": ".zshrc", "hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855", "size": 2048, "permissions": "644"},
+    {"path": ".config/hypr/hyprland.conf", "hash": "a7ffc6f8bf1ed76651c14756a061d662f580ff4de43b49fa82d80a4b80f8434a", "size": 12500, "permissions": "644"}
+  ]
+}
