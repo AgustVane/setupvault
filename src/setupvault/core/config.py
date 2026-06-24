@@ -1,10 +1,11 @@
 from __future__ import annotations
 
 import os
-import tomllib
 from dataclasses import dataclass, field
 from pathlib import Path
 from typing import Any
+
+import tomllib
 
 from setupvault.core.exceptions import ConfigError
 
@@ -12,6 +13,27 @@ DEFAULT_CONFIG_DIR: str = "~/.config/setupvault"
 DEFAULT_CONFIG_FILE: str = "config.toml"
 DEFAULT_EXPORT_DIR: str = "."
 DEFAULT_PROFILE: str = "full"
+
+DEFAULT_DOTFILE_GLOBS: list[str] = [
+    ".bashrc",
+    ".zshrc",
+    ".config/fish/config.fish",
+    ".config/hypr/*",
+    ".config/waybar/*",
+    ".config/gtk-3.0/settings.ini",
+    ".config/gtk-4.0/settings.ini",
+    ".config/qt5ct/*",
+    ".config/qt6ct/*",
+    ".config/kitty/*",
+    ".config/alacritty/*",
+    ".config/neofetch/*",
+    ".config/fastfetch/*",
+    ".tmux.conf",
+    ".config/nvim/*",
+    ".config/Code - OSS/User/settings.json",
+    ".xinitrc",
+    ".xprofile",
+]
 
 
 @dataclass
@@ -31,26 +53,7 @@ class SetupVaultConfig:
     excluded_sections: list[str] = field(default_factory=list)
     included_sections: list[str] = field(default_factory=list)
 
-    dotfile_globs: list[str] = field(default_factory=lambda: [
-        ".bashrc",
-        ".zshrc",
-        ".config/fish/config.fish",
-        ".config/hypr/*",
-        ".config/waybar/*",
-        ".config/gtk-3.0/settings.ini",
-        ".config/gtk-4.0/settings.ini",
-        ".config/qt5ct/*",
-        ".config/qt6ct/*",
-        ".config/kitty/*",
-        ".config/alacritty/*",
-        ".config/neofetch/*",
-        ".config/fastfetch/*",
-        ".tmux.conf",
-        ".config/nvim/*",
-        ".config/Code - OSS/User/settings.json",
-        ".xinitrc",
-        ".xprofile",
-    ])
+    dotfile_globs: list[str] = field(default_factory=lambda: DEFAULT_DOTFILE_GLOBS.copy())
 
     @classmethod
     def load(cls, path: str | Path | None = None) -> SetupVaultConfig:
@@ -84,6 +87,7 @@ class SetupVaultConfig:
     @classmethod
     def _from_dict(cls, data: dict[str, Any], source: Path) -> SetupVaultConfig:
         """Build a config from a parsed TOML dictionary."""
+        _ = source  # reserved for future error reporting
         core = data.get("core", {})
 
         return cls(
@@ -94,7 +98,7 @@ class SetupVaultConfig:
             max_rollback_age_days=core.get("max_rollback_age_days", 30),
             excluded_sections=core.get("excluded_sections", []),
             included_sections=core.get("included_sections", []),
-            dotfile_globs=data.get("dotfiles", {}).get("globs", cls.dotfile_globs),
+            dotfile_globs=data.get("dotfiles", {}).get("globs", DEFAULT_DOTFILE_GLOBS),
         )
 
     def dict(self) -> dict[str, Any]:

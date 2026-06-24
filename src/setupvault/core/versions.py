@@ -28,7 +28,9 @@ class VersionInfo:
 
 def supported_versions() -> list[VersionInfo]:
     """Return all currently supported snapshot format versions."""
-    return [VersionInfo(major=v) for v in range(MINIMUM_SNAPSHOT_VERSION, CURRENT_SNAPSHOT_VERSION + 1)]
+    return [
+        VersionInfo(major=v) for v in range(MINIMUM_SNAPSHOT_VERSION, CURRENT_SNAPSHOT_VERSION + 1)
+    ]
 
 
 def is_supported(version: int) -> bool:

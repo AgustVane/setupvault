@@ -1,8 +1,6 @@
 from __future__ import annotations
 
-from collections.abc import Generator
 from pathlib import Path
-from typing import Any
 
 import pytest
 
@@ -38,7 +36,9 @@ def sample_kernel_info() -> KernelInfo:
 
 
 @pytest.fixture
-def sample_system_info(sample_distro_info: DistributionInfo, sample_kernel_info: KernelInfo) -> SystemInfo:
+def sample_system_info(
+    sample_distro_info: DistributionInfo, sample_kernel_info: KernelInfo
+) -> SystemInfo:
     return SystemInfo(
         distribution=sample_distro_info,
         kernel=sample_kernel_info,
@@ -51,14 +51,12 @@ def sample_system_info(sample_distro_info: DistributionInfo, sample_kernel_info:
 @pytest.fixture
 def sample_package_collection() -> PackageCollection:
     return PackageCollection(
-        counts=PackageCounts(official=1500, aur=50, total=1550),
+        counts=PackageCounts(official=1500, aur=50),
         official=(
             PackageEntry(name="linux", version="6.6.32.arch1-1", repository="core"),
             PackageEntry(name="firefox", version="127.0-1", repository="extra"),
         ),
-        aur=(
-            PackageEntry(name="yay", version="12.3.5-1"),
-        ),
+        aur=(PackageEntry(name="yay", version="12.3.5-1"),),
     )
 
 

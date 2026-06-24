@@ -25,7 +25,7 @@ class SafeCommandRunner:
         text: bool = True,
         timeout: float | None = None,
         env: dict[str, str] | None = None,
-    ) -> subprocess.CompletedProcess:
+    ) -> subprocess.CompletedProcess[str]:
         """Execute a command safely.
 
         Args:
@@ -64,7 +64,9 @@ class SafeCommandRunner:
     def get_output(self, args: Sequence[str | Any], **kwargs: Any) -> str:
         """Run a command and return its stdout as a stripped string."""
         result = self.run(args, capture_output=True, text=True, **kwargs)
-        return result.stdout.strip()
+        out = result.stdout
+        assert isinstance(out, str)
+        return out.strip()
 
 
 def format_command(args: Sequence[str | Any]) -> str:

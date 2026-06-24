@@ -1,7 +1,7 @@
 from __future__ import annotations
 
 import re
-from dataclasses import dataclass, field
+from dataclasses import dataclass
 from typing import Any
 
 
@@ -372,6 +372,12 @@ class SnapshotBuilder:
             raise InvalidSnapshotError(
                 "Snapshot validation failed:\n" + "\n".join(f"  - {e}" for e in errors)
             )
+
+        assert sv is not None
+        assert tv is not None
+        assert ca is not None
+        assert self._system is not None
+        assert self._packages is not None
 
         return Snapshot(
             snapshot_version=sv,

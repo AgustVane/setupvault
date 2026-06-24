@@ -1,6 +1,4 @@
-import pytest
-
-from setupvault.core.merge import MergeStrategy, MergeResult, ThreeWayMerger
+from setupvault.core.merge import MergeStrategy, ThreeWayMerger
 
 
 class TestThreeWayMerger:

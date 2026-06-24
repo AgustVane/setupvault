@@ -52,9 +52,7 @@ def is_safe_relative_path(path: str) -> bool:
         return False
     if path.startswith("/"):
         return False
-    if ".." in path.split("/"):
-        return False
-    return True
+    return ".." not in path.split("/")
 
 
 def sanitize_path_component(name: str) -> str:

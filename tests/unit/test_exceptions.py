@@ -1,5 +1,3 @@
-import pytest
-
 from setupvault.core.exceptions import (
     ConfigError,
     DistributionDetectionError,

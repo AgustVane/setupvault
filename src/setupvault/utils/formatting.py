@@ -1,7 +1,5 @@
 from __future__ import annotations
 
-from typing import Any
-
 
 def pluralize(count: int, singular: str, plural: str | None = None) -> str:
     """Return *singular* or *plural* form based on *count*."""
@@ -10,13 +8,14 @@ def pluralize(count: int, singular: str, plural: str | None = None) -> str:
     return plural if plural else f"{singular}s"
 
 
-def human_size(bytes_: int) -> str:
+def human_size(size: int) -> str:
     """Format a byte count as a human-readable string."""
+    value = float(abs(size))
     for unit in ("B", "KB", "MB", "GB", "TB"):
-        if abs(bytes_) < 1024:
-            return f"{bytes_:.1f} {unit}"
-        bytes_ /= 1024
-    return f"{bytes_:.1f} PB"
+        if value < 1024:
+            return f"{value:.1f} {unit}"
+        value /= 1024
+    return f"{value:.1f} PB"
 
 
 def human_duration(seconds: int) -> str:

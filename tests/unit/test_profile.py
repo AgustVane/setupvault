@@ -1,14 +1,14 @@
 import pytest
 
+from setupvault.core.exceptions import ProfileError
 from setupvault.core.profile import (
-    Profile,
-    KNOWN_SECTIONS,
+    BUILTIN_PROFILES,
     FULL_PROFILE,
+    KNOWN_SECTIONS,
     MINIMAL_PROFILE,
     PACKAGES_ONLY_PROFILE,
-    BUILTIN_PROFILES,
+    Profile,
 )
-from setupvault.core.exceptions import ProfileError
 
 
 class TestProfile:

@@ -2,7 +2,7 @@ from __future__ import annotations
 
 import fnmatch
 import re
-from dataclasses import dataclass, field
+from dataclasses import dataclass
 
 from setupvault.core.exceptions import FilterError
 
@@ -64,10 +64,6 @@ class Filter:
     ) -> Filter:
         """Build a Filter from plain pattern strings."""
         return cls(
-            includes=tuple(
-                FilterRule(p, is_exclude=False) for p in (include_patterns or [])
-            ),
-            excludes=tuple(
-                FilterRule(p, is_exclude=True) for p in (exclude_patterns or [])
-            ),
+            includes=tuple(FilterRule(p, is_exclude=False) for p in (include_patterns or [])),
+            excludes=tuple(FilterRule(p, is_exclude=True) for p in (exclude_patterns or [])),
         )

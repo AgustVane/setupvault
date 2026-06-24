@@ -1,7 +1,7 @@
 import pytest
 
-from setupvault.core.filter import Filter, FilterRule
 from setupvault.core.exceptions import FilterError
+from setupvault.core.filter import Filter, FilterRule
 
 
 class TestFilterRule:

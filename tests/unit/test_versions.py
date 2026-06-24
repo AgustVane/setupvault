@@ -1,15 +1,15 @@
 import pytest
 
+from setupvault.core.exceptions import SnapshotVersionError
 from setupvault.core.versions import (
     CURRENT_SNAPSHOT_VERSION,
     MINIMUM_SNAPSHOT_VERSION,
     VersionInfo,
     is_supported,
+    schema_resource_path,
     supported_versions,
     validate_version,
-    schema_resource_path,
 )
-from setupvault.core.exceptions import SnapshotVersionError
 
 
 class TestVersionInfo:

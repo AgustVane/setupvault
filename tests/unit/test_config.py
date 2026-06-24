@@ -1,6 +1,6 @@
 import pytest
 
-from setupvault.core.config import SetupVaultConfig, DEFAULT_PROFILE, DEFAULT_EXPORT_DIR
+from setupvault.core.config import DEFAULT_EXPORT_DIR, DEFAULT_PROFILE, SetupVaultConfig
 from setupvault.core.exceptions import ConfigError
 
 
@@ -24,7 +24,7 @@ class TestSetupVaultConfig:
             "[core]\n"
             'export_dir = "/tmp/exports"\n'
             "compress_by_default = true\n"
-            "excluded_sections = [\"fonts\"]\n"
+            'excluded_sections = ["fonts"]\n'
             "\n"
             "[dotfiles]\n"
             'globs = [".zshrc", ".bashrc"]\n'

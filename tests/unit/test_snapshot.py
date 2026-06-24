@@ -1,5 +1,6 @@
 import pytest
 
+from setupvault.core.exceptions import InvalidSnapshotError
 from setupvault.core.snapshot import (
     DistributionInfo,
     DotfileEntry,
@@ -8,10 +9,7 @@ from setupvault.core.snapshot import (
     FontEntry,
     FontInfo,
     GtkThemeInfo,
-    KernelInfo,
-    PackageCollection,
     PackageCounts,
-    PackageEntry,
     ShellConfigFile,
     ShellEntry,
     ShellInfo,
@@ -102,10 +100,12 @@ class TestSnapshotBuilder:
         assert snapshot.dotfiles[0].path == ".zshrc"
 
     def test_build_missing_required_field(self) -> None:
-        with pytest.raises(Exception):
+        with pytest.raises(InvalidSnapshotError):
             SnapshotBuilder().build()
 
-    def test_build_missing_snapshot_version(self, sample_system_info, sample_package_collection) -> None:
+    def test_build_missing_snapshot_version(
+        self, sample_system_info, sample_package_collection
+    ) -> None:
         builder = (
             SnapshotBuilder()
             .with_tool_version("1.0.0")
@@ -113,7 +113,7 @@ class TestSnapshotBuilder:
             .with_system(sample_system_info)
             .with_packages(sample_package_collection)
         )
-        with pytest.raises(Exception, match="snapshot_version is required"):
+        with pytest.raises(InvalidSnapshotError, match="snapshot_version is required"):
             builder.build()
 
     def test_build_missing_system(self, sample_package_collection) -> None:
@@ -124,7 +124,7 @@ class TestSnapshotBuilder:
             .with_created_at("2026-01-01T00:00:00Z")
             .with_packages(sample_package_collection)
         )
-        with pytest.raises(Exception, match="system section is required"):
+        with pytest.raises(InvalidSnapshotError, match="system section is required"):
             builder.build()
 
 

@@ -1,18 +1,20 @@
 from __future__ import annotations
 
-from dataclasses import dataclass, field
+from dataclasses import dataclass
 
 from setupvault.core.exceptions import ProfileError
 
-KNOWN_SECTIONS: frozenset[str] = frozenset({
-    "system",
-    "environment",
-    "shell",
-    "packages",
-    "themes",
-    "fonts",
-    "dotfiles",
-})
+KNOWN_SECTIONS: frozenset[str] = frozenset(
+    {
+        "system",
+        "environment",
+        "shell",
+        "packages",
+        "themes",
+        "fonts",
+        "dotfiles",
+    }
+)
 
 
 @dataclass(frozen=True)
@@ -47,16 +49,12 @@ class Profile:
         overlap = set(self.included_sections) & set(self.excluded_sections)
         if overlap:
             raise ProfileError(
-                f"Sections {overlap} are both included and excluded "
-                f"in profile {self.name!r}."
+                f"Sections {overlap} are both included and excluded in profile {self.name!r}."
             )
 
     def sections(self) -> set[str]:
         """Resolve the effective set of sections for this profile."""
-        if self.included_sections:
-            base = set(self.included_sections)
-        else:
-            base = set(KNOWN_SECTIONS)
+        base = set(self.included_sections) if self.included_sections else set(KNOWN_SECTIONS)
         return base - set(self.excluded_sections)
 
 

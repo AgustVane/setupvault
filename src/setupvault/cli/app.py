@@ -21,7 +21,7 @@ def main() -> None:
         return
 
     print(f"Unknown command: {args[0]}")
-    print(f"Run 'setupvault --help' for usage.")
+    print("Run 'setupvault --help' for usage.")
     sys.exit(1)
 
 
