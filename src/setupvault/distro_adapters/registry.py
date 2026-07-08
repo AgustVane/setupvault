@@ -5,11 +5,13 @@ from setupvault.distro_adapters.arch import ArchAdapter
 from setupvault.distro_adapters.base import DistroAdapter
 from setupvault.distro_adapters.debian import DebianAdapter
 from setupvault.distro_adapters.fedora import FedoraAdapter
+from setupvault.distro_adapters.opensuse import OpenSUSEAdapter
 from setupvault.distro_adapters.ubuntu import UbuntuAdapter
 
 _ADAPTER_CLASSES: list[type[DistroAdapter]] = [
     ArchAdapter,
     FedoraAdapter,
+    OpenSUSEAdapter,
     UbuntuAdapter,
     DebianAdapter,
 ]

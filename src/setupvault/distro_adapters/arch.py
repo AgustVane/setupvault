@@ -5,6 +5,20 @@ from pathlib import Path
 from setupvault.distro_adapters.base import DistroAdapter, DistroInfo, InstallResult, Package
 from setupvault.utils.shell import SafeCommandRunner
 
+_OFFICIAL_REPOS = frozenset(
+    {
+        "core",
+        "extra",
+        "community",
+        "multilib",
+        "testing",
+        "core-testing",
+        "extra-testing",
+        "community-testing",
+        "multilib-testing",
+    }
+)
+
 
 class ArchAdapter(DistroAdapter):
     """Distribution adapter for Arch Linux and derivatives."""
@@ -16,6 +30,7 @@ class ArchAdapter(DistroAdapter):
     def __init__(self) -> None:
         self._runner = SafeCommandRunner(timeout=30.0)
         self._os_release: dict[str, str] = {}
+        self._all_packages: list[Package] | None = None
 
     def detect(self) -> bool:
         if Path("/etc/arch-release").exists():
@@ -35,16 +50,20 @@ class ArchAdapter(DistroAdapter):
                 return helper
         return None
 
-    def list_official_packages(self) -> list[Package]:
+    def _load_all_packages(self) -> list[Package]:
+        if self._all_packages is not None:
+            return self._all_packages
+
         result = self._runner.run(["pacman", "-Qqe"], check=False)
         if result.returncode != 0:
-            return []
+            self._all_packages = []
+            return self._all_packages
 
         names = [line.strip() for line in result.stdout.splitlines() if line.strip()]
         if not names:
-            return []
+            self._all_packages = []
+            return self._all_packages
 
-        # Get detailed info: pacman -Qi for each package
         detail_result = self._runner.run(["pacman", "-Qi"] + names, check=False, timeout=60.0)
         packages: list[Package] = []
         current: dict[str, str] = {}
@@ -78,10 +97,24 @@ class ArchAdapter(DistroAdapter):
                     )
                 )
         else:
-            # Fallback: just use names from -Qqe
             packages = [Package(name=n) for n in names]
 
+        self._all_packages = packages
         return packages
+
+    def list_official_packages(self) -> list[Package]:
+        return [
+            p
+            for p in self._load_all_packages()
+            if p.repository is None or p.repository in _OFFICIAL_REPOS
+        ]
+
+    def list_third_party_packages(self) -> list[Package]:
+        return [
+            p
+            for p in self._load_all_packages()
+            if p.repository is not None and p.repository not in _OFFICIAL_REPOS
+        ]
 
     def list_aur_packages(self) -> list[Package]:
         helper = self._find_aur_helper()
@@ -94,18 +127,10 @@ class ArchAdapter(DistroAdapter):
                     if line.strip()
                 ]
 
-        # Fallback: use pacman -Qqm
         result = self._runner.run(["pacman", "-Qqm"], check=False)
         if result.returncode != 0:
             return []
         return [Package(name=line.strip()) for line in result.stdout.splitlines() if line.strip()]
-
-    def list_third_party_packages(self) -> list[Package]:
-        # Arch doesn't cleanly separate third-party from official repos
-        # in a simple way. This is a best-effort: we can check which
-        # pacman repositories are listed in /etc/pacman.conf that are
-        # not in the well-known official set.
-        return []
 
     def install_packages(
         self,

@@ -1,0 +1,71 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://setupvault.dev/schemas/snapshot-v1.json",
+  "title": "SetupVault Snapshot v1",
+  "type": "object",
+  "required": ["snapshot_version", "tool_version", "created_at", "system", "packages"],
+  "properties": {
+    "snapshot_version": { "type": "integer", "minimum": 1 },
+    "tool_version": { "type": "string" },
+    "created_at": { "type": "string" },
+    "profile": { "type": "string" },
+    "notes": { "type": "string" },
+    "system": {
+      "type": "object",
+      "required": ["distribution", "kernel", "architecture", "hostname"],
+      "properties": {
+        "distribution": {
+          "type": "object",
+          "required": ["id", "name", "version"],
+          "properties": {
+            "id": { "type": "string" },
+            "name": { "type": "string" },
+            "version": { "type": "string" },
+            "version_id": { "type": "string" },
+            "id_like": { "type": "array", "items": { "type": "string" } }
+          }
+        },
+        "kernel": {
+          "type": "object",
+          "required": ["release", "version"],
+          "properties": {
+            "release": { "type": "string" },
+            "version": { "type": "string" }
+          }
+        },
+        "architecture": { "type": "string" },
+        "hostname": { "type": "string" },
+        "uptime_seconds": { "type": "integer" },
+        "os": { "type": "string" }
+      }
+    },
+    "environment": { "type": "object" },
+    "shell": { "type": "object" },
+    "packages": {
+      "type": "object",
+      "required": ["count"],
+      "properties": {
+        "count": {
+          "type": "object",
+          "properties": {
+            "official": { "type": "integer" },
+            "aur": { "type": "integer" },
+            "third_party": { "type": "integer" },
+            "flatpak": { "type": "integer" },
+            "snap": { "type": "integer" },
+            "total": { "type": "integer" }
+          }
+        },
+        "official": { "type": "array" },
+        "aur": { "type": "array" },
+        "third_party": { "type": "array" },
+        "flatpak": { "type": "array" },
+        "snap": { "type": "array" }
+      }
+    },
+    "themes": { "type": "object" },
+    "fonts": { "type": "object" },
+    "dotfiles": { "type": "array" },
+    "extensions": { "type": "object" }
+  }
+}

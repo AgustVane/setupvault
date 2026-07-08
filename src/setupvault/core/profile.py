@@ -1,8 +1,14 @@
 from __future__ import annotations
 
 from dataclasses import dataclass
+from pathlib import Path
+from typing import Any
+
+import tomllib
 
 from setupvault.core.exceptions import ProfileError
+
+USER_PROFILES_DIR: str = "~/.config/setupvault/profiles"
 
 KNOWN_SECTIONS: frozenset[str] = frozenset(
     {
@@ -81,3 +87,57 @@ BUILTIN_PROFILES: dict[str, Profile] = {
     "minimal": MINIMAL_PROFILE,
     "packages-only": PACKAGES_ONLY_PROFILE,
 }
+
+
+def _profiles_dir() -> Path:
+    return Path(USER_PROFILES_DIR).expanduser()
+
+
+def load_profile(name: str) -> Profile | None:
+    """Load a user-defined profile from a TOML file.
+
+    Args:
+        name: Profile name (file name without ``.toml`` suffix).
+
+    Returns:
+        A ``Profile`` instance, or ``None`` if no matching file exists.
+    """
+    path = _profiles_dir() / f"{name}.toml"
+    if not path.exists():
+        return None
+
+    try:
+        raw = path.read_bytes()
+        data: dict[str, Any] = tomllib.loads(raw.decode("utf-8"))
+    except (tomllib.TOMLDecodeError, OSError):
+        return None
+
+    included = tuple(data.get("included_sections", []))
+    excluded = tuple(data.get("excluded_sections", []))
+    return Profile(
+        name=name,
+        description=data.get("description", ""),
+        included_sections=included,
+        excluded_sections=excluded,
+    )
+
+
+def load_all_custom_profiles() -> dict[str, Profile]:
+    """Load all user-defined profiles from the profiles directory.
+
+    Returns:
+        A mapping of profile name to ``Profile``.
+    """
+    profiles: dict[str, Profile] = {}
+    pdir = _profiles_dir()
+    if not pdir.exists():
+        return profiles
+
+    for fpath in pdir.iterdir():
+        if fpath.is_file() and fpath.suffix == ".toml":
+            name = fpath.stem
+            profile = load_profile(name)
+            if profile is not None:
+                profiles[name] = profile
+
+    return profiles

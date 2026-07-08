@@ -1,0 +1,1507 @@
+{
+  "vim": {
+    "arch": "vim",
+    "debian": "vim",
+    "fedora": "vim",
+    "ubuntu": "vim",
+    "opensuse": "vim"
+  },
+  "neovim": {
+    "arch": "neovim",
+    "debian": "neovim",
+    "fedora": "neovim",
+    "ubuntu": "neovim",
+    "opensuse": "neovim"
+  },
+  "emacs": {
+    "arch": "emacs",
+    "debian": "emacs",
+    "fedora": "emacs",
+    "ubuntu": "emacs",
+    "opensuse": "emacs"
+  },
+  "nano": {
+    "arch": "nano",
+    "debian": "nano",
+    "fedora": "nano",
+    "ubuntu": "nano",
+    "opensuse": "nano"
+  },
+  "micro": {
+    "arch": "micro",
+    "debian": "micro",
+    "fedora": "micro",
+    "ubuntu": "micro",
+    "opensuse": "micro"
+  },
+  "helix": {
+    "arch": "helix",
+    "debian": "helix",
+    "fedora": "helix",
+    "ubuntu": "helix",
+    "opensuse": "helix"
+  },
+  "bash": {
+    "arch": "bash",
+    "debian": "bash",
+    "fedora": "bash",
+    "ubuntu": "bash",
+    "opensuse": "bash"
+  },
+  "zsh": {
+    "arch": "zsh",
+    "debian": "zsh",
+    "fedora": "zsh",
+    "ubuntu": "zsh",
+    "opensuse": "zsh"
+  },
+  "fish": {
+    "arch": "fish",
+    "debian": "fish",
+    "fedora": "fish",
+    "ubuntu": "fish",
+    "opensuse": "fish"
+  },
+  "dash": {
+    "arch": "dash",
+    "debian": "dash",
+    "fedora": "dash",
+    "ubuntu": "dash",
+    "opensuse": "dash"
+  },
+  "tmux": {
+    "arch": "tmux",
+    "debian": "tmux",
+    "fedora": "tmux",
+    "ubuntu": "tmux",
+    "opensuse": "tmux"
+  },
+  "git": {
+    "arch": "git",
+    "debian": "git",
+    "fedora": "git",
+    "ubuntu": "git",
+    "opensuse": "git"
+  },
+  "curl": {
+    "arch": "curl",
+    "debian": "curl",
+    "fedora": "curl",
+    "ubuntu": "curl",
+    "opensuse": "curl"
+  },
+  "wget": {
+    "arch": "wget",
+    "debian": "wget",
+    "fedora": "wget",
+    "ubuntu": "wget",
+    "opensuse": "wget"
+  },
+  "rsync": {
+    "arch": "rsync",
+    "debian": "rsync",
+    "fedora": "rsync",
+    "ubuntu": "rsync",
+    "opensuse": "rsync"
+  },
+  "ssh": {
+    "arch": "openssh",
+    "debian": "openssh-client",
+    "fedora": "openssh-clients",
+    "ubuntu": "openssh-client",
+    "opensuse": "openssh-clients"
+  },
+  "sshd": {
+    "arch": "openssh",
+    "debian": "openssh-server",
+    "fedora": "openssh-server",
+    "ubuntu": "openssh-server",
+    "opensuse": "openssh-server"
+  },
+  "htop": {
+    "arch": "htop",
+    "debian": "htop",
+    "fedora": "htop",
+    "ubuntu": "htop",
+    "opensuse": "htop"
+  },
+  "btop": {
+    "arch": "btop",
+    "debian": "btop",
+    "fedora": "btop",
+    "ubuntu": "btop",
+    "opensuse": "btop"
+  },
+  "jq": {
+    "arch": "jq",
+    "debian": "jq",
+    "fedora": "jq",
+    "ubuntu": "jq",
+    "opensuse": "jq"
+  },
+  "yq": {
+    "arch": "yq",
+    "debian": "yq",
+    "fedora": "python3-yq",
+    "ubuntu": "yq",
+    "opensuse": "python3-yq"
+  },
+  "ripgrep": {
+    "arch": "ripgrep",
+    "debian": "ripgrep",
+    "fedora": "ripgrep",
+    "ubuntu": "ripgrep",
+    "opensuse": "ripgrep"
+  },
+  "fd": {
+    "arch": "fd",
+    "debian": "fd-find",
+    "fedora": "fd-find",
+    "ubuntu": "fd-find",
+    "opensuse": "fd-find"
+  },
+  "fzf": {
+    "arch": "fzf",
+    "debian": "fzf",
+    "fedora": "fzf",
+    "ubuntu": "fzf",
+    "opensuse": "fzf"
+  },
+  "bat": {
+    "arch": "bat",
+    "debian": "batcat",
+    "fedora": "bat",
+    "ubuntu": "batcat",
+    "opensuse": "bat"
+  },
+  "eza": {
+    "arch": "eza",
+    "debian": "eza",
+    "fedora": "eza",
+    "ubuntu": "eza",
+    "opensuse": "eza"
+  },
+  "lsd": {
+    "arch": "lsd",
+    "debian": "lsd",
+    "fedora": "lsd",
+    "ubuntu": "lsd",
+    "opensuse": "lsd"
+  },
+  "delta": {
+    "arch": "git-delta",
+    "debian": "git-delta",
+    "fedora": "git-delta",
+    "ubuntu": "git-delta",
+    "opensuse": "git-delta"
+  },
+  "lazygit": {
+    "arch": "lazygit",
+    "debian": "lazygit",
+    "fedora": "lazygit",
+    "ubuntu": "lazygit",
+    "opensuse": "lazygit"
+  },
+  "python3": {
+    "arch": "python",
+    "debian": "python3",
+    "fedora": "python3",
+    "ubuntu": "python3",
+    "opensuse": "python3"
+  },
+  "python-pip": {
+    "arch": "python-pip",
+    "debian": "python3-pip",
+    "fedora": "python3-pip",
+    "ubuntu": "python3-pip",
+    "opensuse": "python3-pip"
+  },
+  "python-venv": {
+    "arch": "python",
+    "debian": "python3-venv",
+    "fedora": "python3-virtualenv",
+    "ubuntu": "python3-venv",
+    "opensuse": "python3-virtualenv"
+  },
+  "nodejs": {
+    "arch": "nodejs",
+    "debian": "nodejs",
+    "fedora": "nodejs",
+    "ubuntu": "nodejs",
+    "opensuse": "nodejs"
+  },
+  "npm": {
+    "arch": "npm",
+    "debian": "npm",
+    "fedora": "npm",
+    "ubuntu": "npm",
+    "opensuse": "npm"
+  },
+  "yarn": {
+    "arch": "yarn",
+    "debian": "yarnpkg",
+    "fedora": "nodejs-yarn",
+    "ubuntu": "yarnpkg",
+    "opensuse": "nodejs-yarn"
+  },
+  "go": {
+    "arch": "go",
+    "debian": "golang",
+    "fedora": "golang",
+    "ubuntu": "golang",
+    "opensuse": "golang"
+  },
+  "rust": {
+    "arch": "rust",
+    "debian": "rustc",
+    "fedora": "rust",
+    "ubuntu": "rustc",
+    "opensuse": "rust"
+  },
+  "cargo": {
+    "arch": "cargo",
+    "debian": "cargo",
+    "fedora": "cargo",
+    "ubuntu": "cargo",
+    "opensuse": "cargo"
+  },
+  "jdk": {
+    "arch": "jdk-openjdk",
+    "debian": "default-jdk",
+    "fedora": "java-latest-openjdk",
+    "ubuntu": "default-jdk",
+    "opensuse": "java-latest-openjdk"
+  },
+  "jre": {
+    "arch": "jre-openjdk",
+    "debian": "default-jre",
+    "fedora": "java-latest-openjdk-headless",
+    "ubuntu": "default-jre",
+    "opensuse": "java-latest-openjdk-headless"
+  },
+  "lua": {
+    "arch": "lua",
+    "debian": "lua5.4",
+    "fedora": "lua",
+    "ubuntu": "lua5.4",
+    "opensuse": "lua"
+  },
+  "luarocks": {
+    "arch": "luarocks",
+    "debian": "luarocks",
+    "fedora": "luarocks",
+    "ubuntu": "luarocks",
+    "opensuse": "luarocks"
+  },
+  "perl": {
+    "arch": "perl",
+    "debian": "perl",
+    "fedora": "perl",
+    "ubuntu": "perl",
+    "opensuse": "perl"
+  },
+  "ruby": {
+    "arch": "ruby",
+    "debian": "ruby",
+    "fedora": "ruby",
+    "ubuntu": "ruby",
+    "opensuse": "ruby"
+  },
+  "php": {
+    "arch": "php",
+    "debian": "php",
+    "fedora": "php",
+    "ubuntu": "php",
+    "opensuse": "php"
+  },
+  "composer": {
+    "arch": "composer",
+    "debian": "composer",
+    "fedora": "composer",
+    "ubuntu": "composer",
+    "opensuse": "composer"
+  },
+  "gcc": {
+    "arch": "gcc",
+    "debian": "gcc",
+    "fedora": "gcc",
+    "ubuntu": "gcc",
+    "opensuse": "gcc"
+  },
+  "g++": {
+    "arch": "gcc",
+    "debian": "g++",
+    "fedora": "gcc-c++",
+    "ubuntu": "g++",
+    "opensuse": "gcc-c++"
+  },
+  "clang": {
+    "arch": "clang",
+    "debian": "clang",
+    "fedora": "clang",
+    "ubuntu": "clang",
+    "opensuse": "clang"
+  },
+  "llvm": {
+    "arch": "llvm",
+    "debian": "llvm",
+    "fedora": "llvm",
+    "ubuntu": "llvm",
+    "opensuse": "llvm"
+  },
+  "make": {
+    "arch": "make",
+    "debian": "make",
+    "fedora": "make",
+    "ubuntu": "make",
+    "opensuse": "make"
+  },
+  "cmake": {
+    "arch": "cmake",
+    "debian": "cmake",
+    "fedora": "cmake",
+    "ubuntu": "cmake",
+    "opensuse": "cmake"
+  },
+  "meson": {
+    "arch": "meson",
+    "debian": "meson",
+    "fedora": "meson",
+    "ubuntu": "meson",
+    "opensuse": "meson"
+  },
+  "ninja": {
+    "arch": "ninja",
+    "debian": "ninja-build",
+    "fedora": "ninja-build",
+    "ubuntu": "ninja-build",
+    "opensuse": "ninja-build"
+  },
+  "pkg-config": {
+    "arch": "pkgconfig",
+    "debian": "pkg-config",
+    "fedora": "pkgconfig",
+    "ubuntu": "pkg-config",
+    "opensuse": "pkgconf-pkg-config"
+  },
+  "autoconf": {
+    "arch": "autoconf",
+    "debian": "autoconf",
+    "fedora": "autoconf",
+    "ubuntu": "autoconf",
+    "opensuse": "autoconf"
+  },
+  "automake": {
+    "arch": "automake",
+    "debian": "automake",
+    "fedora": "automake",
+    "ubuntu": "automake",
+    "opensuse": "automake"
+  },
+  "libtool": {
+    "arch": "libtool",
+    "debian": "libtool",
+    "fedora": "libtool",
+    "ubuntu": "libtool",
+    "opensuse": "libtool"
+  },
+  "m4": {
+    "arch": "m4",
+    "debian": "m4",
+    "fedora": "m4",
+    "ubuntu": "m4",
+    "opensuse": "m4"
+  },
+  "bison": {
+    "arch": "bison",
+    "debian": "bison",
+    "fedora": "bison",
+    "ubuntu": "bison",
+    "opensuse": "bison"
+  },
+  "flex": {
+    "arch": "flex",
+    "debian": "flex",
+    "fedora": "flex",
+    "ubuntu": "flex",
+    "opensuse": "flex"
+  },
+  "patch": {
+    "arch": "patch",
+    "debian": "patch",
+    "fedora": "patch",
+    "ubuntu": "patch",
+    "opensuse": "patch"
+  },
+  "base-devel": {
+    "arch": "base-devel",
+    "debian": "build-essential",
+    "fedora": "@development-tools",
+    "ubuntu": "build-essential",
+    "opensuse": "patterns-devel-base-devel"
+  },
+  "docker": {
+    "arch": "docker",
+    "debian": "docker.io",
+    "fedora": "docker",
+    "ubuntu": "docker.io",
+    "opensuse": "docker"
+  },
+  "docker-compose": {
+    "arch": "docker-compose",
+    "debian": "docker-compose",
+    "fedora": "docker-compose",
+    "ubuntu": "docker-compose",
+    "opensuse": "docker-compose"
+  },
+  "podman": {
+    "arch": "podman",
+    "debian": "podman",
+    "fedora": "podman",
+    "ubuntu": "podman",
+    "opensuse": "podman"
+  },
+  "buildah": {
+    "arch": "buildah",
+    "debian": "buildah",
+    "fedora": "buildah",
+    "ubuntu": "buildah",
+    "opensuse": "buildah"
+  },
+  "kubectl": {
+    "arch": "kubectl",
+    "debian": "kubectl",
+    "fedora": "kubectl",
+    "ubuntu": "kubectl",
+    "opensuse": "kubectl"
+  },
+  "helm": {
+    "arch": "helm",
+    "debian": "helm",
+    "fedora": "helm",
+    "ubuntu": "helm",
+    "opensuse": "helm"
+  },
+  "minikube": {
+    "arch": "minikube",
+    "debian": "minikube",
+    "fedora": "minikube",
+    "ubuntu": "minikube",
+    "opensuse": "minikube"
+  },
+  "vagrant": {
+    "arch": "vagrant",
+    "debian": "vagrant",
+    "fedora": "vagrant",
+    "ubuntu": "vagrant",
+    "opensuse": "vagrant"
+  },
+  "terraform": {
+    "arch": "terraform",
+    "debian": "terraform",
+    "fedora": "terraform",
+    "ubuntu": "terraform",
+    "opensuse": "terraform"
+  },
+  "ansible": {
+    "arch": "ansible",
+    "debian": "ansible",
+    "fedora": "ansible",
+    "ubuntu": "ansible",
+    "opensuse": "ansible"
+  },
+  "nginx": {
+    "arch": "nginx",
+    "debian": "nginx",
+    "fedora": "nginx",
+    "ubuntu": "nginx",
+    "opensuse": "nginx"
+  },
+  "apache": {
+    "arch": "apache",
+    "debian": "apache2",
+    "fedora": "httpd",
+    "ubuntu": "apache2",
+    "opensuse": "apache2"
+  },
+  "postgresql": {
+    "arch": "postgresql",
+    "debian": "postgresql",
+    "fedora": "postgresql",
+    "ubuntu": "postgresql",
+    "opensuse": "postgresql16-server"
+  },
+  "mysql": {
+    "arch": "mysql",
+    "debian": "mysql-server",
+    "fedora": "mysql-server",
+    "ubuntu": "mysql-server",
+    "opensuse": "mysql-server"
+  },
+  "mariadb": {
+    "arch": "mariadb",
+    "debian": "mariadb-server",
+    "fedora": "mariadb-server",
+    "ubuntu": "mariadb-server",
+    "opensuse": "mariadb-server"
+  },
+  "sqlite": {
+    "arch": "sqlite",
+    "debian": "sqlite3",
+    "fedora": "sqlite",
+    "ubuntu": "sqlite3",
+    "opensuse": "sqlite"
+  },
+  "redis": {
+    "arch": "redis",
+    "debian": "redis-server",
+    "fedora": "redis",
+    "ubuntu": "redis-server",
+    "opensuse": "redis"
+  },
+  "memcached": {
+    "arch": "memcached",
+    "debian": "memcached",
+    "fedora": "memcached",
+    "ubuntu": "memcached",
+    "opensuse": "memcached"
+  },
+  "mongodb": {
+    "arch": "mongodb",
+    "debian": "mongodb-mongosh",
+    "fedora": "mongodb-mongosh",
+    "ubuntu": "mongodb-mongosh",
+    "opensuse": "mongodb"
+  },
+  "firefox": {
+    "arch": "firefox",
+    "debian": "firefox-esr",
+    "fedora": "firefox",
+    "ubuntu": "firefox",
+    "opensuse": "firefox"
+  },
+  "chromium": {
+    "arch": "chromium",
+    "debian": "chromium",
+    "fedora": "chromium",
+    "ubuntu": "chromium",
+    "opensuse": "chromium"
+  },
+  "google-chrome": {
+    "arch": "google-chrome",
+    "debian": "google-chrome-stable",
+    "fedora": "google-chrome-stable",
+    "ubuntu": "google-chrome-stable",
+    "opensuse": "google-chrome-stable"
+  },
+  "thunderbird": {
+    "arch": "thunderbird",
+    "debian": "thunderbird",
+    "fedora": "thunderbird",
+    "ubuntu": "thunderbird",
+    "opensuse": "thunderbird"
+  },
+  "libreoffice": {
+    "arch": "libreoffice-fresh",
+    "debian": "libreoffice",
+    "fedora": "libreoffice",
+    "ubuntu": "libreoffice",
+    "opensuse": "libreoffice"
+  },
+  "vlc": {
+    "arch": "vlc",
+    "debian": "vlc",
+    "fedora": "vlc",
+    "ubuntu": "vlc",
+    "opensuse": "vlc"
+  },
+  "mpv": {
+    "arch": "mpv",
+    "debian": "mpv",
+    "fedora": "mpv",
+    "ubuntu": "mpv",
+    "opensuse": "mpv"
+  },
+  "yt-dlp": {
+    "arch": "yt-dlp",
+    "debian": "yt-dlp",
+    "fedora": "yt-dlp",
+    "ubuntu": "yt-dlp",
+    "opensuse": "yt-dlp"
+  },
+  "ffmpeg": {
+    "arch": "ffmpeg",
+    "debian": "ffmpeg",
+    "fedora": "ffmpeg",
+    "ubuntu": "ffmpeg",
+    "opensuse": "ffmpeg"
+  },
+  "imagemagick": {
+    "arch": "imagemagick",
+    "debian": "imagemagick",
+    "fedora": "ImageMagick",
+    "ubuntu": "imagemagick",
+    "opensuse": "ImageMagick"
+  },
+  "gimp": {
+    "arch": "gimp",
+    "debian": "gimp",
+    "fedora": "gimp",
+    "ubuntu": "gimp",
+    "opensuse": "gimp"
+  },
+  "inkscape": {
+    "arch": "inkscape",
+    "debian": "inkscape",
+    "fedora": "inkscape",
+    "ubuntu": "inkscape",
+    "opensuse": "inkscape"
+  },
+  "obs-studio": {
+    "arch": "obs-studio",
+    "debian": "obs-studio",
+    "fedora": "obs-studio",
+    "ubuntu": "obs-studio",
+    "opensuse": "obs-studio"
+  },
+  "kdenlive": {
+    "arch": "kdenlive",
+    "debian": "kdenlive",
+    "fedora": "kdenlive",
+    "ubuntu": "kdenlive",
+    "opensuse": "kdenlive"
+  },
+  "blender": {
+    "arch": "blender",
+    "debian": "blender",
+    "fedora": "blender",
+    "ubuntu": "blender",
+    "opensuse": "blender"
+  },
+  "neofetch": {
+    "arch": "neofetch",
+    "debian": "neofetch",
+    "fedora": "neofetch",
+    "ubuntu": "neofetch",
+    "opensuse": "neofetch"
+  },
+  "fastfetch": {
+    "arch": "fastfetch",
+    "debian": "fastfetch",
+    "fedora": "fastfetch",
+    "ubuntu": "fastfetch",
+    "opensuse": "fastfetch"
+  },
+  "alacritty": {
+    "arch": "alacritty",
+    "debian": "alacritty",
+    "fedora": "alacritty",
+    "ubuntu": "alacritty",
+    "opensuse": "alacritty"
+  },
+  "kitty": {
+    "arch": "kitty",
+    "debian": "kitty",
+    "fedora": "kitty",
+    "ubuntu": "kitty",
+    "opensuse": "kitty"
+  },
+  "wezterm": {
+    "arch": "wezterm",
+    "debian": "wezterm",
+    "fedora": "wezterm",
+    "ubuntu": "wezterm",
+    "opensuse": "wezterm"
+  },
+  "foot": {
+    "arch": "foot",
+    "debian": "foot",
+    "fedora": "foot",
+    "ubuntu": "foot",
+    "opensuse": "foot"
+  },
+  "st": {
+    "arch": "st",
+    "debian": "stterm",
+    "fedora": "st",
+    "ubuntu": "stterm",
+    "opensuse": "st"
+  },
+  "waybar": {
+    "arch": "waybar",
+    "debian": "waybar",
+    "fedora": "waybar",
+    "ubuntu": "waybar",
+    "opensuse": "waybar"
+  },
+  "polybar": {
+    "arch": "polybar",
+    "debian": "polybar",
+    "fedora": "polybar",
+    "ubuntu": "polybar",
+    "opensuse": "polybar"
+  },
+  "rofi": {
+    "arch": "rofi",
+    "debian": "rofi",
+    "fedora": "rofi",
+    "ubuntu": "rofi",
+    "opensuse": "rofi"
+  },
+  "wofi": {
+    "arch": "wofi",
+    "debian": "wofi",
+    "fedora": "wofi",
+    "ubuntu": "wofi",
+    "opensuse": "wofi"
+  },
+  "dmenu": {
+    "arch": "dmenu",
+    "debian": "suckless-tools",
+    "fedora": "dmenu",
+    "ubuntu": "suckless-tools",
+    "opensuse": "dmenu"
+  },
+  "dunst": {
+    "arch": "dunst",
+    "debian": "dunst",
+    "fedora": "dunst",
+    "ubuntu": "dunst",
+    "opensuse": "dunst"
+  },
+  "picom": {
+    "arch": "picom",
+    "debian": "picom",
+    "fedora": "picom",
+    "ubuntu": "picom",
+    "opensuse": "picom"
+  },
+  "hyprland": {
+    "arch": "hyprland",
+    "debian": "hyprland",
+    "fedora": "hyprland",
+    "ubuntu": "hyprland",
+    "opensuse": "hyprland"
+  },
+  "sway": {
+    "arch": "sway",
+    "debian": "sway",
+    "fedora": "sway",
+    "ubuntu": "sway",
+    "opensuse": "sway"
+  },
+  "i3": {
+    "arch": "i3-wm",
+    "debian": "i3",
+    "fedora": "i3",
+    "ubuntu": "i3",
+    "opensuse": "i3"
+  },
+  "bspwm": {
+    "arch": "bspwm",
+    "debian": "bspwm",
+    "fedora": "bspwm",
+    "ubuntu": "bspwm",
+    "opensuse": "bspwm"
+  },
+  "qtile": {
+    "arch": "qtile",
+    "debian": "qtile",
+    "fedora": "qtile",
+    "ubuntu": "qtile",
+    "opensuse": "qtile"
+  },
+  "awesome": {
+    "arch": "awesome",
+    "debian": "awesome",
+    "fedora": "awesome",
+    "ubuntu": "awesome",
+    "opensuse": "awesome"
+  },
+  "pipewire": {
+    "arch": "pipewire",
+    "debian": "pipewire",
+    "fedora": "pipewire",
+    "ubuntu": "pipewire",
+    "opensuse": "pipewire"
+  },
+  "pulseaudio": {
+    "arch": "pulseaudio",
+    "debian": "pulseaudio",
+    "fedora": "pulseaudio",
+    "ubuntu": "pulseaudio",
+    "opensuse": "pulseaudio"
+  },
+  "alsa-utils": {
+    "arch": "alsa-utils",
+    "debian": "alsa-utils",
+    "fedora": "alsa-utils",
+    "ubuntu": "alsa-utils",
+    "opensuse": "alsa-utils"
+  },
+  "bluez": {
+    "arch": "bluez",
+    "debian": "bluez",
+    "fedora": "bluez",
+    "ubuntu": "bluez",
+    "opensuse": "bluez"
+  },
+  "networkmanager": {
+    "arch": "networkmanager",
+    "debian": "network-manager",
+    "fedora": "NetworkManager",
+    "ubuntu": "network-manager",
+    "opensuse": "NetworkManager"
+  },
+  "iwd": {
+    "arch": "iwd",
+    "debian": "iwd",
+    "fedora": "iwd",
+    "ubuntu": "iwd",
+    "opensuse": "iwd"
+  },
+  "iwlwifi": {
+    "arch": "iwlwifi",
+    "debian": "firmware-iwlwifi",
+    "fedora": "iwlwifi-firmware",
+    "ubuntu": "linux-firmware",
+    "opensuse": "iwlwifi-firmware"
+  },
+  "acpi": {
+    "arch": "acpi",
+    "debian": "acpi",
+    "fedora": "acpi",
+    "ubuntu": "acpi",
+    "opensuse": "acpi"
+  },
+  "tlp": {
+    "arch": "tlp",
+    "debian": "tlp",
+    "fedora": "tlp",
+    "ubuntu": "tlp",
+    "opensuse": "tlp"
+  },
+  "powertop": {
+    "arch": "powertop",
+    "debian": "powertop",
+    "fedora": "powertop",
+    "ubuntu": "powertop",
+    "opensuse": "powertop"
+  },
+  "flatpak": {
+    "arch": "flatpak",
+    "debian": "flatpak",
+    "fedora": "flatpak",
+    "ubuntu": "flatpak",
+    "opensuse": "flatpak"
+  },
+  "snapd": {
+    "arch": "snapd",
+    "debian": "snapd",
+    "fedora": "snapd",
+    "ubuntu": "snapd",
+    "opensuse": "snapd"
+  },
+  "appimagelauncher": {
+    "arch": "appimagelauncher",
+    "debian": "appimagelauncher",
+    "fedora": "appimagelauncher",
+    "ubuntu": "appimagelauncher",
+    "opensuse": "appimagelauncher"
+  },
+  "ufw": {
+    "arch": "ufw",
+    "debian": "ufw",
+    "fedora": "ufw",
+    "ubuntu": "ufw",
+    "opensuse": "ufw"
+  },
+  "firewalld": {
+    "arch": "firewalld",
+    "debian": "firewalld",
+    "fedora": "firewalld",
+    "ubuntu": "firewalld",
+    "opensuse": "firewalld"
+  },
+  "iptables": {
+    "arch": "iptables",
+    "debian": "iptables",
+    "fedora": "iptables",
+    "ubuntu": "iptables",
+    "opensuse": "iptables"
+  },
+  "nftables": {
+    "arch": "nftables",
+    "debian": "nftables",
+    "fedora": "nftables",
+    "ubuntu": "nftables",
+    "opensuse": "nftables"
+  },
+  "openssl": {
+    "arch": "openssl",
+    "debian": "openssl",
+    "fedora": "openssl",
+    "ubuntu": "openssl",
+    "opensuse": "openssl"
+  },
+  "gnupg": {
+    "arch": "gnupg",
+    "debian": "gnupg",
+    "fedora": "gnupg",
+    "ubuntu": "gnupg",
+    "opensuse": "gnupg"
+  },
+  "ca-certificates": {
+    "arch": "ca-certificates",
+    "debian": "ca-certificates",
+    "fedora": "ca-certificates",
+    "ubuntu": "ca-certificates",
+    "opensuse": "ca-certificates"
+  },
+  "unzip": {
+    "arch": "unzip",
+    "debian": "unzip",
+    "fedora": "unzip",
+    "ubuntu": "unzip",
+    "opensuse": "unzip"
+  },
+  "zip": {
+    "arch": "zip",
+    "debian": "zip",
+    "fedora": "zip",
+    "ubuntu": "zip",
+    "opensuse": "zip"
+  },
+  "tar": {
+    "arch": "tar",
+    "debian": "tar",
+    "fedora": "tar",
+    "ubuntu": "tar",
+    "opensuse": "tar"
+  },
+  "gzip": {
+    "arch": "gzip",
+    "debian": "gzip",
+    "fedora": "gzip",
+    "ubuntu": "gzip",
+    "opensuse": "gzip"
+  },
+  "xz": {
+    "arch": "xz",
+    "debian": "xz-utils",
+    "fedora": "xz",
+    "ubuntu": "xz-utils",
+    "opensuse": "xz"
+  },
+  "zstd": {
+    "arch": "zstd",
+    "debian": "zstd",
+    "fedora": "zstd",
+    "ubuntu": "zstd",
+    "opensuse": "zstd"
+  },
+  "bzip2": {
+    "arch": "bzip2",
+    "debian": "bzip2",
+    "fedora": "bzip2",
+    "ubuntu": "bzip2",
+    "opensuse": "bzip2"
+  },
+  "p7zip": {
+    "arch": "p7zip",
+    "debian": "p7zip-full",
+    "fedora": "p7zip",
+    "ubuntu": "p7zip-full",
+    "opensuse": "p7zip"
+  },
+  "tree": {
+    "arch": "tree",
+    "debian": "tree",
+    "fedora": "tree",
+    "ubuntu": "tree",
+    "opensuse": "tree"
+  },
+  "strace": {
+    "arch": "strace",
+    "debian": "strace",
+    "fedora": "strace",
+    "ubuntu": "strace",
+    "opensuse": "strace"
+  },
+  "ltrace": {
+    "arch": "ltrace",
+    "debian": "ltrace",
+    "fedora": "ltrace",
+    "ubuntu": "ltrace",
+    "opensuse": "ltrace"
+  },
+  "gdb": {
+    "arch": "gdb",
+    "debian": "gdb",
+    "fedora": "gdb",
+    "ubuntu": "gdb",
+    "opensuse": "gdb"
+  },
+  "valgrind": {
+    "arch": "valgrind",
+    "debian": "valgrind",
+    "fedora": "valgrind",
+    "ubuntu": "valgrind",
+    "opensuse": "valgrind"
+  },
+  "perf": {
+    "arch": "perf",
+    "debian": "linux-perf",
+    "fedora": "perf",
+    "ubuntu": "linux-perf",
+    "opensuse": "perf"
+  },
+  "lsof": {
+    "arch": "lsof",
+    "debian": "lsof",
+    "fedora": "lsof",
+    "ubuntu": "lsof",
+    "opensuse": "lsof"
+  },
+  "ncdu": {
+    "arch": "ncdu",
+    "debian": "ncdu",
+    "fedora": "ncdu",
+    "ubuntu": "ncdu",
+    "opensuse": "ncdu"
+  },
+  "duf": {
+    "arch": "duf",
+    "debian": "duf",
+    "fedora": "duf",
+    "ubuntu": "duf",
+    "opensuse": "duf"
+  },
+  "dust": {
+    "arch": "dust",
+    "debian": "dust",
+    "fedora": "dust",
+    "ubuntu": "dust",
+    "opensuse": "dust"
+  },
+  "procs": {
+    "arch": "procs",
+    "debian": "procs",
+    "fedora": "procs",
+    "ubuntu": "procs",
+    "opensuse": "procs"
+  },
+  "bottom": {
+    "arch": "bottom",
+    "debian": "bottom",
+    "fedora": "bottom",
+    "ubuntu": "bottom",
+    "opensuse": "bottom"
+  },
+  "neovim-lsp": {
+    "arch": "neovim",
+    "debian": "neovim",
+    "fedora": "neovim",
+    "ubuntu": "neovim",
+    "opensuse": "neovim"
+  },
+  "python3-pylsp": {
+    "arch": "python-lsp-server",
+    "debian": "python3-lsp-server",
+    "fedora": "python-lsp-server",
+    "ubuntu": "python3-lsp-server",
+    "opensuse": "python-lsp-server"
+  },
+  "bash-language-server": {
+    "arch": "bash-language-server",
+    "debian": "bash-language-server",
+    "fedora": "bash-language-server",
+    "ubuntu": "bash-language-server",
+    "opensuse": "bash-language-server"
+  },
+  "typescript-language-server": {
+    "arch": "typescript-language-server",
+    "debian": "typescript-language-server",
+    "fedora": "typescript-language-server",
+    "ubuntu": "typescript-language-server",
+    "opensuse": "typescript-language-server"
+  },
+  "rust-analyzer": {
+    "arch": "rust-analyzer",
+    "debian": "rust-analyzer",
+    "fedora": "rust-analyzer",
+    "ubuntu": "rust-analyzer",
+    "opensuse": "rust-analyzer"
+  },
+  "xorg": {
+    "arch": "xorg",
+    "debian": "xserver-xorg",
+    "fedora": "xorg-x11-server",
+    "ubuntu": "xserver-xorg",
+    "opensuse": "xorg-x11-server"
+  },
+  "xorg-xinit": {
+    "arch": "xorg-xinit",
+    "debian": "xinit",
+    "fedora": "xorg-x11-xinit",
+    "ubuntu": "xinit",
+    "opensuse": "xorg-x11-xinit"
+  },
+  "xclip": {
+    "arch": "xclip",
+    "debian": "xclip",
+    "fedora": "xclip",
+    "ubuntu": "xclip",
+    "opensuse": "xclip"
+  },
+  "xsel": {
+    "arch": "xsel",
+    "debian": "xsel",
+    "fedora": "xsel",
+    "ubuntu": "xsel",
+    "opensuse": "xsel"
+  },
+  "arandr": {
+    "arch": "arandr",
+    "debian": "arandr",
+    "fedora": "arandr",
+    "ubuntu": "arandr",
+    "opensuse": "arandr"
+  },
+  "gtk3": {
+    "arch": "gtk3",
+    "debian": "libgtk-3-dev",
+    "fedora": "gtk3-devel",
+    "ubuntu": "libgtk-3-dev",
+    "opensuse": "gtk3-devel"
+  },
+  "gtk4": {
+    "arch": "gtk4",
+    "debian": "libgtk-4-dev",
+    "fedora": "gtk4-devel",
+    "ubuntu": "libgtk-4-dev",
+    "opensuse": "gtk4-devel"
+  },
+  "qt5": {
+    "arch": "qt5-base",
+    "debian": "qtbase5-dev",
+    "fedora": "qt5-qtbase-devel",
+    "ubuntu": "qtbase5-dev",
+    "opensuse": "libqt5-qtbase-devel"
+  },
+  "qt6": {
+    "arch": "qt6-base",
+    "debian": "qt6-base-dev",
+    "fedora": "qt6-qtbase-devel",
+    "ubuntu": "qt6-base-dev",
+    "opensuse": "libqt6-qtbase-devel"
+  },
+  "sdl2": {
+    "arch": "sdl2",
+    "debian": "libsdl2-dev",
+    "fedora": "SDL2-devel",
+    "ubuntu": "libsdl2-dev",
+    "opensuse": "libSDL2-devel"
+  },
+  "glibc": {
+    "arch": "glibc",
+    "debian": "libc6",
+    "fedora": "glibc",
+    "ubuntu": "libc6",
+    "opensuse": "glibc"
+  },
+  "glibc-common": {
+    "arch": "glibc",
+    "debian": "libc6",
+    "fedora": "glibc-common",
+    "ubuntu": "libc6",
+    "opensuse": "glibc-common"
+  },
+  "linux-headers": {
+    "arch": "linux-headers",
+    "debian": "linux-headers-generic",
+    "fedora": "kernel-devel",
+    "ubuntu": "linux-headers-generic",
+    "opensuse": "kernel-devel"
+  },
+  "dkms": {
+    "arch": "dkms",
+    "debian": "dkms",
+    "fedora": "dkms",
+    "ubuntu": "dkms",
+    "opensuse": "dkms"
+  },
+  "nvidia-dkms": {
+    "arch": "nvidia-dkms",
+    "debian": "nvidia-driver",
+    "fedora": "akmod-nvidia",
+    "ubuntu": "nvidia-driver-560",
+    "opensuse": "nvidia-driver-G06-kmp-default"
+  },
+  "nvidia-utils": {
+    "arch": "nvidia-utils",
+    "debian": "nvidia-utils",
+    "fedora": "nvidia-utils",
+    "ubuntu": "nvidia-utils",
+    "opensuse": "nvidia-compute-G06"
+  },
+  "mesa": {
+    "arch": "mesa",
+    "debian": "mesa-utils",
+    "fedora": "mesa-libGL",
+    "ubuntu": "mesa-utils",
+    "opensuse": "Mesa"
+  },
+  "vulkan": {
+    "arch": "vulkan-icd-loader",
+    "debian": "vulkan-tools",
+    "fedora": "vulkan-loader",
+    "ubuntu": "vulkan-tools",
+    "opensuse": "vulkan-loader"
+  },
+  "vulkan-radeon": {
+    "arch": "vulkan-radeon",
+    "debian": "mesa-vulkan-drivers",
+    "fedora": "mesa-vulkan-drivers",
+    "ubuntu": "mesa-vulkan-drivers",
+    "opensuse": "Mesa-radv"
+  },
+  "vulkan-intel": {
+    "arch": "vulkan-intel",
+    "debian": "mesa-vulkan-drivers",
+    "fedora": "mesa-vulkan-drivers",
+    "ubuntu": "mesa-vulkan-drivers",
+    "opensuse": "mesa-vulkan-drivers"
+  },
+  "vulkan-nvidia": {
+    "arch": "nvidia-utils",
+    "debian": "nvidia-driver",
+    "fedora": "nvidia-utils",
+    "ubuntu": "nvidia-driver-560",
+    "opensuse": "nvidia-utils"
+  },
+  "fonts-firacode": {
+    "arch": "ttf-fira-code",
+    "debian": "fonts-firacode",
+    "fedora": "fira-code-fonts",
+    "ubuntu": "fonts-firacode",
+    "opensuse": "fira-code-fonts"
+  },
+  "fonts-jetbrains": {
+    "arch": "ttf-jetbrains-mono",
+    "debian": "fonts-jetbrains-mono",
+    "fedora": "jetbrains-mono-fonts",
+    "ubuntu": "fonts-jetbrains-mono",
+    "opensuse": "jetbrains-mono-fonts"
+  },
+  "fonts-nerd": {
+    "arch": "ttf-nerd-fonts-symbols",
+    "debian": "fonts-nerd-fonts",
+    "fedora": "nerd-fonts",
+    "ubuntu": "fonts-nerd-fonts",
+    "opensuse": "nerd-fonts"
+  },
+  "fonts-noto": {
+    "arch": "noto-fonts",
+    "debian": "fonts-noto",
+    "fedora": "google-noto-fonts",
+    "ubuntu": "fonts-noto",
+    "opensuse": "google-noto-sans-fonts"
+  },
+  "fonts-emoji": {
+    "arch": "noto-fonts-emoji",
+    "debian": "fonts-noto-color-emoji",
+    "fedora": "google-noto-emoji-fonts",
+    "ubuntu": "fonts-noto-color-emoji",
+    "opensuse": "google-noto-emoji-fonts"
+  },
+  "fonts-roboto": {
+    "arch": "ttf-roboto",
+    "debian": "fonts-roboto",
+    "fedora": "roboto-fonts",
+    "ubuntu": "fonts-roboto",
+    "opensuse": "google-roboto-fonts"
+  },
+  "themes-adwaita": {
+    "arch": "adwaita-icon-theme",
+    "debian": "adwaita-icon-theme",
+    "fedora": "adwaita-icon-theme",
+    "ubuntu": "adwaita-icon-theme",
+    "opensuse": "adwaita-icon-theme"
+  },
+  "themes-gruvbox": {
+    "arch": "gruvbox-icon-theme",
+    "debian": "gruvbox-icon-theme",
+    "fedora": "gruvbox-icon-theme",
+    "ubuntu": "gruvbox-icon-theme",
+    "opensuse": "gruvbox-icon-theme"
+  },
+  "themes-papirus": {
+    "arch": "papirus-icon-theme",
+    "debian": "papirus-icon-theme",
+    "fedora": "papirus-icon-theme",
+    "ubuntu": "papirus-icon-theme",
+    "opensuse": "papirus-icon-theme"
+  },
+  "virtualbox": {
+    "arch": "virtualbox",
+    "debian": "virtualbox",
+    "fedora": "VirtualBox",
+    "ubuntu": "virtualbox",
+    "opensuse": "virtualbox"
+  },
+  "qemu": {
+    "arch": "qemu-full",
+    "debian": "qemu-kvm",
+    "fedora": "qemu-kvm",
+    "ubuntu": "qemu-kvm",
+    "opensuse": "qemu-kvm"
+  },
+  "libvirt": {
+    "arch": "libvirt",
+    "debian": "libvirt-daemon",
+    "fedora": "libvirt-daemon",
+    "ubuntu": "libvirt-daemon-system",
+    "opensuse": "libvirt-daemon"
+  },
+  "virt-manager": {
+    "arch": "virt-manager",
+    "debian": "virt-manager",
+    "fedora": "virt-manager",
+    "ubuntu": "virt-manager",
+    "opensuse": "virt-manager"
+  },
+  "wine": {
+    "arch": "wine",
+    "debian": "wine",
+    "fedora": "wine",
+    "ubuntu": "wine",
+    "opensuse": "wine"
+  },
+  "lutris": {
+    "arch": "lutris",
+    "debian": "lutris",
+    "fedora": "lutris",
+    "ubuntu": "lutris",
+    "opensuse": "lutris"
+  },
+  "steam": {
+    "arch": "steam",
+    "debian": "steam-installer",
+    "fedora": "steam",
+    "ubuntu": "steam",
+    "opensuse": "steam"
+  },
+  "keepassxc": {
+    "arch": "keepassxc",
+    "debian": "keepassxc",
+    "fedora": "keepassxc",
+    "ubuntu": "keepassxc",
+    "opensuse": "keepassxc"
+  },
+  "bitwarden": {
+    "arch": "bitwarden",
+    "debian": "bitwarden-desktop",
+    "fedora": "bitwarden-desktop",
+    "ubuntu": "bitwarden-desktop",
+    "opensuse": "bitwarden-desktop"
+  },
+  "signal": {
+    "arch": "signal-desktop",
+    "debian": "signal-desktop",
+    "fedora": "signal-desktop",
+    "ubuntu": "signal-desktop",
+    "opensuse": "signal-desktop"
+  },
+  "discord": {
+    "arch": "discord",
+    "debian": "discord",
+    "fedora": "discord",
+    "ubuntu": "discord",
+    "opensuse": "discord"
+  },
+  "slack": {
+    "arch": "slack-desktop",
+    "debian": "slack-desktop",
+    "fedora": "slack-desktop",
+    "ubuntu": "slack-desktop",
+    "opensuse": "slack-desktop"
+  },
+  "telegram": {
+    "arch": "telegram-desktop",
+    "debian": "telegram-desktop",
+    "fedora": "telegram-desktop",
+    "ubuntu": "telegram-desktop",
+    "opensuse": "telegram-desktop"
+  },
+  "syncthing": {
+    "arch": "syncthing",
+    "debian": "syncthing",
+    "fedora": "syncthing",
+    "ubuntu": "syncthing",
+    "opensuse": "syncthing"
+  },
+  "rclone": {
+    "arch": "rclone",
+    "debian": "rclone",
+    "fedora": "rclone",
+    "ubuntu": "rclone",
+    "opensuse": "rclone"
+  },
+  "restic": {
+    "arch": "restic",
+    "debian": "restic",
+    "fedora": "restic",
+    "ubuntu": "restic",
+    "opensuse": "restic"
+  },
+  "borg": {
+    "arch": "borg",
+    "debian": "borgbackup",
+    "fedora": "borgbackup",
+    "ubuntu": "borgbackup",
+    "opensuse": "borgbackup"
+  },
+  "thunar": {
+    "arch": "thunar",
+    "debian": "thunar",
+    "fedora": "Thunar",
+    "ubuntu": "thunar",
+    "opensuse": "Thunar"
+  },
+  "nautilus": {
+    "arch": "nautilus",
+    "debian": "nautilus",
+    "fedora": "nautilus",
+    "ubuntu": "nautilus",
+    "opensuse": "nautilus"
+  },
+  "dolphin": {
+    "arch": "dolphin",
+    "debian": "dolphin",
+    "fedora": "dolphin",
+    "ubuntu": "dolphin",
+    "opensuse": "dolphin"
+  },
+  "ranger": {
+    "arch": "ranger",
+    "debian": "ranger",
+    "fedora": "ranger",
+    "ubuntu": "ranger",
+    "opensuse": "ranger"
+  },
+  "lf": {
+    "arch": "lf",
+    "debian": "lf",
+    "fedora": "lf",
+    "ubuntu": "lf",
+    "opensuse": "lf"
+  },
+  "yazi": {
+    "arch": "yazi",
+    "debian": "yazi",
+    "fedora": "yazi",
+    "ubuntu": "yazi",
+    "opensuse": "yazi"
+  }
+}

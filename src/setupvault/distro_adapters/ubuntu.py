@@ -1,19 +1,27 @@
 from __future__ import annotations
 
 from setupvault.distro_adapters.base import DistroInfo
-from setupvault.distro_adapters.debian import DebianAdapter
+from setupvault.distro_adapters.debian import (
+    _UBUNTU_OFFICIAL_SUITES,
+    DebianAdapter,
+)
 
 
 class UbuntuAdapter(DebianAdapter):
     """Distribution adapter for Ubuntu.
 
     Inherits most logic from DebianAdapter; only overrides detection
-    and distribution identity.
+    and distribution identity, and uses Ubuntu-specific suite names
+    for third-party detection.
     """
 
     distro_id = "ubuntu"
     distro_names = ["Ubuntu"]
     id_like = ["debian", "ubuntu"]
+
+    @property
+    def _official_suites(self) -> frozenset[str]:
+        return _UBUNTU_OFFICIAL_SUITES
 
     def detect(self) -> bool:
         data = self.get_os_release_content()

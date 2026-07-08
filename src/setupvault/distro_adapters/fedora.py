@@ -5,6 +5,17 @@ from pathlib import Path
 from setupvault.distro_adapters.base import DistroAdapter, DistroInfo, InstallResult, Package
 from setupvault.utils.shell import SafeCommandRunner
 
+_OFFICIAL_REPOS = frozenset(
+    {
+        "@fedora",
+        "@updates",
+        "@fedora-cisco-openh264",
+        "fedora",
+        "updates",
+        "fedora-cisco-openh264",
+    }
+)
+
 
 class FedoraAdapter(DistroAdapter):
     """Distribution adapter for Fedora."""
@@ -16,6 +27,7 @@ class FedoraAdapter(DistroAdapter):
     def __init__(self) -> None:
         self._runner = SafeCommandRunner(timeout=30.0)
         self._os_release: dict[str, str] = {}
+        self._all_packages: list[Package] | None = None
 
     def detect(self) -> bool:
         data = self.get_os_release_content()
@@ -28,21 +40,24 @@ class FedoraAdapter(DistroAdapter):
     def get_package_manager(self) -> str:
         return "dnf"
 
-    def list_official_packages(self) -> list[Package]:
+    def _load_all_packages(self) -> list[Package]:
+        if self._all_packages is not None:
+            return self._all_packages
+
         result = self._runner.run(
             ["dnf", "list", "installed"],
             check=False,
             timeout=60.0,
         )
         if result.returncode != 0:
-            # Fallback for older DNF versions
             result = self._runner.run(
                 ["rpm", "-qa", "--queryformat", "%{NAME} %{VERSION} %{REPO} %{SIZE} %{SUMMARY}\n"],
                 check=False,
                 timeout=60.0,
             )
             if result.returncode != 0:
-                return []
+                self._all_packages = []
+                return self._all_packages
 
             packages: list[Package] = []
             for line in result.stdout.splitlines():
@@ -61,15 +76,14 @@ class FedoraAdapter(DistroAdapter):
                         description=parts[4] if len(parts) > 4 else None,
                     )
                 )
+            self._all_packages = packages
             return packages
 
-        # Parse dnf list installed output
         packages = []
         for line in result.stdout.splitlines():
             line = line.strip()
             if not line or line.startswith("Installed") or line.startswith("Upgraded"):
                 continue
-            # Format: "package_name.x86_64  version  @repository"
             parts = line.split()
             if len(parts) < 2:
                 continue
@@ -79,7 +93,18 @@ class FedoraAdapter(DistroAdapter):
             repo = parts[2].lstrip("@") if len(parts) > 2 else None
             packages.append(Package(name=name, version=version, repository=repo))
 
+        self._all_packages = packages
         return packages
+
+    def list_official_packages(self) -> list[Package]:
+        return [p for p in self._load_all_packages() if p.repository in _OFFICIAL_REPOS]
+
+    def list_third_party_packages(self) -> list[Package]:
+        return [
+            p
+            for p in self._load_all_packages()
+            if p.repository is not None and p.repository not in _OFFICIAL_REPOS
+        ]
 
     def install_packages(
         self,
@@ -125,14 +150,3 @@ class FedoraAdapter(DistroAdapter):
             version_id=data.get("VERSION_ID"),
             id_like=tuple(v.strip() for v in data.get("ID_LIKE", "").split() if v.strip()),
         )
-
-    def map_package(self, package_name: str, target_distro_id: str) -> str | None:
-        _mappings: dict[str, dict[str, str]] = {
-            "arch": {
-                "glibc-common": "glibc",
-            },
-            "debian": {
-                "glibc-common": "libc6",
-            },
-        }
-        return _mappings.get(target_distro_id, {}).get(package_name)

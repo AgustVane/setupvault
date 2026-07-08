@@ -218,6 +218,7 @@ class DotfileEntry:
     size: int | None = None
     permissions: str | None = None
     backed_up: bool = False
+    content: str | None = None
 
 
 _SHA256_RE = re.compile(r"^[a-f0-9]{64}$")

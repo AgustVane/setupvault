@@ -3,6 +3,8 @@ from __future__ import annotations
 from abc import ABC, abstractmethod
 from dataclasses import dataclass
 
+from setupvault.mappings.package_mapper import get_mapper
+
 
 @dataclass(frozen=True)
 class DistroInfo:
@@ -112,11 +114,11 @@ class DistroAdapter(ABC):
     def map_package(self, package_name: str, target_distro_id: str) -> str | None:
         """Map a package name from this distro to *target_distro_id*.
 
-        Returns ``None`` when no mapping is known.
+        Uses the global PackageMapper database. Returns ``None`` when
+        no mapping is known.
         """
-        _ = (package_name, target_distro_id)
-        _ = target_distro_id
-        return None
+        mapper = get_mapper()
+        return mapper.map(package_name, target=target_distro_id)
 
     @abstractmethod
     def get_distro_info(self) -> DistroInfo:

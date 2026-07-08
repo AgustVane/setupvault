@@ -10,9 +10,24 @@ import tomllib
 from setupvault.core.exceptions import ConfigError
 
 DEFAULT_CONFIG_DIR: str = "~/.config/setupvault"
+DEFAULT_SNAPSHOTS_DIR: str = "~/.local/share/setupvault/snapshots"
 DEFAULT_CONFIG_FILE: str = "config.toml"
 DEFAULT_EXPORT_DIR: str = "."
 DEFAULT_PROFILE: str = "full"
+
+
+@dataclass
+class ConfigPaths:
+    config_dir: Path
+    snapshots_dir: Path
+
+
+def get_config_paths() -> ConfigPaths:
+    return ConfigPaths(
+        config_dir=Path(DEFAULT_CONFIG_DIR).expanduser(),
+        snapshots_dir=Path(DEFAULT_SNAPSHOTS_DIR).expanduser(),
+    )
+
 
 DEFAULT_DOTFILE_GLOBS: list[str] = [
     ".bashrc",
