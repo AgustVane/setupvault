@@ -25,7 +25,7 @@ class Worker(QThread):
         self.finished.connect(lambda _: self.deleteLater())
         self.errored.connect(lambda _: self.deleteLater())
 
-    def run(self) -> None:  # type: ignore[override]
+    def run(self) -> None:
         try:
             result = self._fn(*self._args, **self._kwargs)
             self.finished.emit(result)

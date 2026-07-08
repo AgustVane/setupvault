@@ -8,7 +8,7 @@ from setupvault.reports.markdown import render_markdown
 from setupvault.storage.local import read_snapshot
 
 
-def build_parser(subparsers: argparse._SubParsersAction) -> argparse.ArgumentParser:
+def build_parser(subparsers: argparse._SubParsersAction[argparse.ArgumentParser]) -> None:
     parser = subparsers.add_parser(
         "info",
         help="Display snapshot information",
@@ -18,7 +18,6 @@ def build_parser(subparsers: argparse._SubParsersAction) -> argparse.ArgumentPar
         type=str,
         help="Path to the snapshot file",
     )
-    return parser
 
 
 def run_info(args: argparse.Namespace) -> int:

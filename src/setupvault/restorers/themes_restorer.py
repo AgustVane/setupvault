@@ -79,6 +79,8 @@ def apply_themes(plan: ThemesPlan) -> list[str]:
 
     errors: list[str] = []
     for action in plan.actions:
+        if action.value is None:
+            continue
         try:
             subprocess.run(
                 ["gsettings", "set", action.command, action.args[0], action.value],

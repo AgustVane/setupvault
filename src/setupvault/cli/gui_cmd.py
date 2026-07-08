@@ -3,7 +3,7 @@ from __future__ import annotations
 import argparse
 
 
-def build_gui_parser(sub: argparse._SubParsersAction) -> None:
+def build_gui_parser(sub: argparse._SubParsersAction[argparse.ArgumentParser]) -> None:
     """Add the ``gui`` subcommand to the CLI parser."""
     parser = sub.add_parser(
         "gui",
@@ -22,7 +22,7 @@ def run_gui(args: argparse.Namespace) -> int:
     from setupvault.gui.app import launch
 
     try:
-        return launch(style=args.style)
+        return launch(style=args.style)  # type: ignore[no-any-return]
     except ImportError as exc:  # pragma: no cover - environment dependent
         print("GUI dependencies are missing. Install with: pip install 'setupvault[gui]'")
         print(f"Details: {exc}")

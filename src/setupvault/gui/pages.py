@@ -10,6 +10,7 @@ from PySide6.QtWidgets import (
     QWidget,
 )
 
+from setupvault.gui.styles import Theme
 from setupvault.gui.widgets import Card
 
 _PAGE_ICONS = {
@@ -29,7 +30,7 @@ class BasePage(QWidget):
     title: str = "Untitled"
     description: str = ""
 
-    def __init__(self, theme=None) -> None:
+    def __init__(self, theme: Theme | None = None) -> None:
         super().__init__()
         self._theme = theme
         self._build_ui()
@@ -82,7 +83,7 @@ class BasePage(QWidget):
     def _build_body(self) -> None:
         pass
 
-    def apply_theme(self, theme) -> None:
+    def apply_theme(self, theme: Theme) -> None:
         self._theme = theme
 
 

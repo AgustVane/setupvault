@@ -102,7 +102,7 @@ class TestPanelsInstantiate:
         )
         panel = SettingsPanel()
         panel.apply_settings(settings)
-        assert panel._theme.value() == "dark"
+        assert panel._theme_combo.value() == "dark"
         assert panel._density.value() == "compact"
         assert panel._profile.value() == "minimal"
         assert panel._report_fmt.value() == "json"

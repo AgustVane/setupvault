@@ -8,14 +8,8 @@ from setupvault.core.snapshot import (
 from setupvault.detectors.shell import ShellDetection as ShellDetectionResult
 
 
-def _map_shell_entry(entry: ShellDetectionResult | ShellEntry) -> ShellEntry:
-    if isinstance(entry, ShellEntry):
-        return entry
-    return ShellEntry(
-        name=entry.name,
-        version=entry.version,
-        path=entry.path,
-    )
+def _map_shell_entry(entry: ShellEntry) -> ShellEntry:
+    return entry
 
 
 def export_shell(detection: ShellDetectionResult) -> ShellInfo | None:

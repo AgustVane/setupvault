@@ -7,7 +7,7 @@ from pathlib import Path
 from setupvault.services.list_service import list_snapshots
 
 
-def build_parser(subparsers: argparse._SubParsersAction) -> argparse.ArgumentParser:
+def build_parser(subparsers: argparse._SubParsersAction[argparse.ArgumentParser]) -> None:
     parser = subparsers.add_parser(
         "list",
         help="List available snapshots",
@@ -19,7 +19,6 @@ def build_parser(subparsers: argparse._SubParsersAction) -> argparse.ArgumentPar
         default=None,
         help="Custom snapshot directory (default: XDG snapshots dir)",
     )
-    return parser
 
 
 def run_list(args: argparse.Namespace) -> int:

@@ -105,9 +105,10 @@ def _system_table(sys_info: object) -> str:
         ("Architecture", s.architecture),
         ("Hostname", s.hostname),
     ]
-    if getattr(s, "uptime_seconds", None) is not None:
-        hours = s.uptime_seconds // 3600
-        minutes = (s.uptime_seconds % 3600) // 60
+    uptime_secs = getattr(s, "uptime_seconds", None)
+    if uptime_secs is not None:
+        hours = uptime_secs // 3600
+        minutes = (uptime_secs % 3600) // 60
         rows.append(("Uptime", f"{hours}h {minutes}m"))
     return "".join(f"      <tr><th>{k}</th><td>{v}</td></tr>\n" for k, v in rows)
 

@@ -7,7 +7,7 @@ from pathlib import Path
 from setupvault.services.diff_service import diff_snapshots
 
 
-def build_parser(subparsers: argparse._SubParsersAction) -> argparse.ArgumentParser:
+def build_parser(subparsers: argparse._SubParsersAction[argparse.ArgumentParser]) -> None:
     parser = subparsers.add_parser(
         "diff",
         help="Compare two snapshots",
@@ -22,7 +22,6 @@ def build_parser(subparsers: argparse._SubParsersAction) -> argparse.ArgumentPar
         type=str,
         help="Second snapshot file",
     )
-    return parser
 
 
 def run_diff(args: argparse.Namespace) -> int:

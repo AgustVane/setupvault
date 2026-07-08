@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import argparse
 import sys
+from collections.abc import Callable
 
 from setupvault import __version__
 from setupvault.cli.diff_cmd import build_parser as build_diff_parser
@@ -20,7 +21,7 @@ from setupvault.cli.restore_cmd import build_restore_parser, run_restore
 from setupvault.cli.validate_cmd import build_parser as build_validate_parser
 from setupvault.cli.validate_cmd import run_validate
 
-_ROUTER: dict[str, callable] = {
+_ROUTER: dict[str, Callable[[argparse.Namespace], int]] = {
     "export": run_export,
     "restore": run_restore,
     "info": run_info,

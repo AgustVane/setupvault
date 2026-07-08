@@ -44,7 +44,7 @@ class Card(QFrame):
     def addWidget(self, widget: QWidget) -> None:
         self._layout.addWidget(widget)
 
-    def addLayout(self, layout) -> None:
+    def addLayout(self, layout: QVBoxLayout | QHBoxLayout) -> None:
         self._layout.addLayout(layout)
 
     def body(self) -> QVBoxLayout:

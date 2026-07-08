@@ -137,7 +137,8 @@ class MainWindow(QMainWindow):
         for key, label, _icon, _tip in _COMMAND_LABELS:
             page = pages.get(key)
             if page is None:
-                page = panel_for.get(key, lambda lab=label: PlaceholderPage(lab))()
+                cls = panel_for.get(key)
+                page = cls() if cls else PlaceholderPage(label)
             if hasattr(page, "apply_settings"):
                 page.apply_settings(self._settings)
             self._stack.addWidget(page)
@@ -176,8 +177,8 @@ class MainWindow(QMainWindow):
                 pass
 
     def closeEvent(self, event: QCloseEvent) -> None:
-        geo = self.saveGeometry().toBase64().data().decode("ascii")
-        state = self.saveState().toBase64().data().decode("ascii")
+        geo = bytes(self.saveGeometry().toBase64().data()).decode("ascii")
+        state = bytes(self.saveState().toBase64().data()).decode("ascii")
         self._settings.window_geometry = geo
         self._settings.window_state = state
         self._settings.save()
@@ -188,7 +189,7 @@ class MainWindow(QMainWindow):
         self.setStyleSheet(stylesheet(theme, self._settings.density))
         for idx in range(self._stack.count()):
             page = self._stack.widget(idx)
-            if isinstance(page, BasePage) and page is not self:
+            if isinstance(page, BasePage):
                 page.apply_theme(theme)
 
     def reload_settings(self) -> None:
@@ -197,7 +198,7 @@ class MainWindow(QMainWindow):
         self.apply_theme(self._theme)
         for idx in range(self._stack.count()):
             page = self._stack.widget(idx)
-            if hasattr(page, "apply_settings"):
+            if page is not None and hasattr(page, "apply_settings"):
                 page.apply_settings(self._settings)
 
     def show_status(self, message: str, timeout: int = 5000) -> None:

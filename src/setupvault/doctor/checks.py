@@ -33,12 +33,12 @@ def python_version() -> CheckResult:
 
 
 def distro_detected() -> CheckResult:
-    result = detect_distro(SafeCommandRunner())
+    result = detect_distro()
     ok = result.distro_id != "unknown"
     return (
         "distro_detected",
         ok,
-        f"{result.distro_id}/{result.name}" if ok else "Could not detect distribution",
+        f"{result.distro_id}/{result.distro_name}" if ok else "Could not detect distribution",
     )
 
 

@@ -145,5 +145,6 @@ def _render_dotfiles(lines: list[str], snapshot: Snapshot) -> None:
     lines.append("| Path | Hash |")
     lines.append("|------|------|")
     for df in snapshot.dotfiles:
-        lines.append(f"| `{df.path}` | `{df.hash[:16]}…` |")
+        h = df.hash[:16] if df.hash else "—"
+        lines.append(f"| `{df.path}` | `{h}…` |")
     lines.append("")

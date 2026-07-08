@@ -78,7 +78,9 @@ def _diff_section(
         result.details[name] = details
 
 
-def _diff_packages(result: DiffResult, left_data: dict, right_data: dict) -> None:
+def _diff_packages(
+    result: DiffResult, left_data: dict[str, Any], right_data: dict[str, Any]
+) -> None:
     lp = left_data.get("packages", {})
     rp = right_data.get("packages", {})
 
@@ -117,14 +119,16 @@ def _diff_packages(result: DiffResult, left_data: dict, right_data: dict) -> Non
         result.details["packages"] = all_details
 
 
-def _package_names(pkg_dict: dict, section: str) -> set[str]:
+def _package_names(pkg_dict: dict[str, Any], section: str) -> set[str]:
     entries = pkg_dict.get(section, [])
     if not isinstance(entries, list):
         return set()
     return {e.get("name", "") for e in entries if isinstance(e, dict)}
 
 
-def _diff_dotfiles(result: DiffResult, left_data: dict, right_data: dict) -> None:
+def _diff_dotfiles(
+    result: DiffResult, left_data: dict[str, Any], right_data: dict[str, Any]
+) -> None:
     left_dots = left_data.get("dotfiles", [])
     right_dots = right_data.get("dotfiles", [])
     if not isinstance(left_dots, list):

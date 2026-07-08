@@ -522,7 +522,7 @@ class RestorePanel(_FilePanel):
         self._body_layout.addWidget(self._out)
         self._plan_btn.clicked.connect(self._on_plan)
         self._apply_btn.clicked.connect(self._on_apply)
-        self._plan_result = None  # type: ignore[assignment]
+        self._plan_result = None
 
     def _on_plan(self) -> None:
         from setupvault.services.restore_service import RestoreService
@@ -604,8 +604,8 @@ class SettingsPanel(BasePage):
 
         self._settings_cls = GuiSettings
         section = Section("Appearance")
-        self._theme = ComboField("Theme", ["system", "light", "dark"], "system")
-        section.addWidget(self._theme)
+        self._theme_combo = ComboField("Theme", ["system", "light", "dark"], "system")
+        section.addWidget(self._theme_combo)
         self._accent = ComboField("Accent", list(self._ACCENTS), "Default")
         section.addWidget(self._accent)
         self._density = ComboField("Density", ["comfortable", "compact"], "comfortable")
@@ -629,7 +629,7 @@ class SettingsPanel(BasePage):
 
     def apply_settings(self, settings) -> None:  # type: ignore[no-untyped-def]
         self._pending = settings
-        self._theme.set_value(settings.theme)
+        self._theme_combo.set_value(settings.theme)
         accent_label = next(
             (k for k, v in self._ACCENTS.items() if v == settings.accent), "Default"
         )
@@ -640,7 +640,7 @@ class SettingsPanel(BasePage):
 
     def _on_save(self) -> None:
         settings = self._settings_cls(
-            theme=self._theme.value(),
+            theme=self._theme_combo.value(),
             accent=self._ACCENTS.get(self._accent.value(), ""),
             density=self._density.value(),
             default_report_format=self._report_fmt.value(),

@@ -7,7 +7,7 @@ from pathlib import Path
 from setupvault.services.validate_service import validate_snapshot
 
 
-def build_parser(subparsers: argparse._SubParsersAction) -> argparse.ArgumentParser:
+def build_parser(subparsers: argparse._SubParsersAction[argparse.ArgumentParser]) -> None:
     parser = subparsers.add_parser(
         "validate",
         help="Validate a snapshot file",
@@ -17,7 +17,6 @@ def build_parser(subparsers: argparse._SubParsersAction) -> argparse.ArgumentPar
         type=str,
         help="Path to the snapshot file",
     )
-    return parser
 
 
 def run_validate(args: argparse.Namespace) -> int:

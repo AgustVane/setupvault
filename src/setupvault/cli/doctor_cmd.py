@@ -5,7 +5,7 @@ import argparse
 from setupvault.services.doctor_service import diagnose
 
 
-def build_parser(subparsers: argparse._SubParsersAction) -> argparse.ArgumentParser:
+def build_parser(subparsers: argparse._SubParsersAction[argparse.ArgumentParser]) -> None:
     parser = subparsers.add_parser(
         "doctor",
         help="Run system diagnostics",
@@ -16,7 +16,6 @@ def build_parser(subparsers: argparse._SubParsersAction) -> argparse.ArgumentPar
         nargs="*",
         help="Specific checks to run (default: all)",
     )
-    return parser
 
 
 def run_doctor(args: argparse.Namespace) -> int:

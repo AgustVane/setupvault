@@ -7,7 +7,7 @@ from pathlib import Path
 from setupvault.services.report_service import generate_report
 
 
-def build_parser(subparsers: argparse._SubParsersAction) -> argparse.ArgumentParser:
+def build_parser(subparsers: argparse._SubParsersAction[argparse.ArgumentParser]) -> None:
     parser = subparsers.add_parser(
         "report",
         help="Generate a report from a snapshot",
@@ -31,7 +31,6 @@ def build_parser(subparsers: argparse._SubParsersAction) -> argparse.ArgumentPar
         default=None,
         help="Write output to file instead of stdout",
     )
-    return parser
 
 
 def run_report(args: argparse.Namespace) -> int:
