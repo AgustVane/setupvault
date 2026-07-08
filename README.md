@@ -18,22 +18,44 @@ Cross-distribution Linux setup backup, migration, restoration, and sharing tool.
 
 Supported distributions: Arch Linux, Debian, Fedora, Ubuntu, openSUSE.
 
+## Requirements
+
+- **Python 3.10+**
+- **pipx** (recommended) or `pip` inside a virtual environment
+- **PySide6** — only needed for the GUI (`setupvault-gui`)
+
 ## Installation
 
+### Via pipx (recommended)
+
 ```bash
-pip install setupvault
+pipx install "setupvault[gui]"
+setupvault      # CLI
+setupvault-gui  # GUI
 ```
 
-For the GUI:
+### Via git clone
 
 ```bash
-pip install "setupvault[gui]"
+git clone https://github.com/AgustVane/setupvault.git
+cd setupvault
+
+# Create and activate a virtual environment
+python -m venv .venv
+source .venv/bin/activate
+
+# Install with GUI support
+pip install ".[gui]"
+
+# Run
+setupvault          # CLI
+setupvault-gui      # GUI
 ```
 
-### Development
+### Development install
 
 ```bash
-git clone <repo>
+git clone https://github.com/AgustVane/setupvault.git
 cd setupvault
 python -m venv .venv && source .venv/bin/activate
 pip install -e ".[gui,dev]"
